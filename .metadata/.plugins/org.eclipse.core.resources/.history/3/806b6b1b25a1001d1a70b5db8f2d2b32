@@ -1,0 +1,5 @@
+package com.nv.foodapp.exception;
+
+public class CommonExceptionHandler {
+
+}

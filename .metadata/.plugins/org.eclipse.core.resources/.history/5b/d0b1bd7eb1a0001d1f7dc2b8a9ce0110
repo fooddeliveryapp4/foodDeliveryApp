@@ -1,0 +1,33 @@
+package com.nv.foodapp.entity;
+
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Entity
+@Data
+@NoArgsConstructor
+public class Item {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO) 
+	private String itemId;
+	private String itemName;
+	private int quantity;
+	private double cost;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "restaurent id")
+	private List<Restaurant> restaurants;
+
+}

@@ -1,0 +1,21 @@
+package com.nv.foodapp.entity;
+
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+
+public class Restaurant {
+private String restaurantId;
+private String restaurantName;
+private Address address;
+private String managerName;
+private String contactNumber;
+
+
+@OneToMany(cascade = CascadeType.ALL)
+@JoinColumn(name = "courseNumber")
+private List<Item> itemList;
+
+}

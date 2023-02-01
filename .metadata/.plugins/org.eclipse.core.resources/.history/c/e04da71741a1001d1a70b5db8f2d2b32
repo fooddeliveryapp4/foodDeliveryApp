@@ -1,0 +1,48 @@
+package com.nv.foodapp.service.item;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.nv.foodapp.entity.Item;
+import com.nv.foodapp.entity.Restaurant;
+import com.nv.foodapp.repository.item.ItemRepository;
+
+@Service
+public class ItemServiceImpl implements IItemService {
+     
+	@Autowired
+	ItemRepository itemRepository;
+
+	@Override
+	public Item addItem(Item item) {
+		// TODO Auto-generated method stub
+		return itemRepository.save(item);
+	}
+
+	@Override
+	public Item updateItem(Item item) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Item removeItem(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Item> viewAllItems(Restaurant res) {
+		// TODO Auto-generated method stub
+		return itemRepository.findAll();
+	}
+
+	@Override
+	public Item viewAllItemsByName(String name) {
+		// TODO Auto-generated method stub
+		return itemRepository.getItemByItemName(name);
+	}
+
+}

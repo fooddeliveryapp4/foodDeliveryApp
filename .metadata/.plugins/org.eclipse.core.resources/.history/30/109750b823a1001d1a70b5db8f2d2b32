@@ -1,0 +1,8 @@
+package com.nv.foodapp.dto;
+
+public class RestaurantDefaultDTO {
+	private int restaurantId;
+	private String restaurantName;
+	private String restaurantContactnumber;
+
+}

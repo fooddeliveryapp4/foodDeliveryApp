@@ -1,0 +1,46 @@
+package com.nv.foodapp.service.item;
+
+import java.util.List;
+
+import com.nv.foodapp.entity.Item;
+import com.nv.foodapp.entity.Restaurant;
+
+public class ItemServiceImpl implements IItemService {
+
+	@Override
+	public Item addItem(Item item) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Item viewItem(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Item updateItem(Item item) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Item removeItem(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Item> viewAllItems(Restaurant res) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Item> viewAllItemsByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

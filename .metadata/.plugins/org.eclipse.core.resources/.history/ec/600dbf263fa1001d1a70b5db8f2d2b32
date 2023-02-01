@@ -1,0 +1,19 @@
+package com.nv.foodapp.repository.restaurant;
+
+import org.springframework.stereotype.Repository;
+
+import com.nv.foodapp.entity.Item;
+import com.nv.foodapp.entity.Restaurant;
+
+@Repository
+public class CustomRestaurantRepositoryImpl implements ICustomRestaurantRepository {
+
+	@Override
+	public Restaurant updateRestaurantByItem(Restaurant restaurant, Item item) {
+		// TODO Auto-generated method stub
+		restaurant.setItem(item);
+		
+		return restaurant;
+	}
+
+}

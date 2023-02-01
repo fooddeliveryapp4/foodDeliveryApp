@@ -1,0 +1,16 @@
+package com.nv.foodapp.util;
+
+import com.nv.foodapp.dto.ItemDTO;
+import com.nv.foodapp.entity.Item;
+
+public class ItemDTOConvertor {
+	
+	public ItemDTO getItemDTO(Item i) {
+		
+		ItemDTO obj= new ItemDTO(i.getItemId(),i.getItemName(),i.getItemName());
+		return obj;
+	}
+	
+
+
+}

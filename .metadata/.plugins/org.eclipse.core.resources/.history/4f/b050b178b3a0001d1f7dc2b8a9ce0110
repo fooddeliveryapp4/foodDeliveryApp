@@ -1,0 +1,7 @@
+package com.nv.foodapp.service.restaurant;
+
+public interface IRestaurantService {
+	
+
+	
+}

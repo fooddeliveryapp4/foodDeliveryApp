@@ -1,0 +1,15 @@
+package com.nv.foodapp.repository.item;
+
+import com.nv.foodapp.entity.Item;
+import com.nv.foodapp.entity.Restaurant;
+import com.nv.foodapp.repository.restaurant.ICustomRestaurantRepository;
+
+public class CustomItemRepository implements ICustomRestaurantRepository {
+
+	@Override
+	public Restaurant updateRestaurantByItem(Restaurant restaurant, Item item) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

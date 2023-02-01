@@ -1,0 +1,34 @@
+package com.nv.foodapp.entity;
+
+
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
+
+import jakarta.persistence.OneToOne;
+
+public class Restaurant {
+private String restaurantId;
+private String restaurantName;
+private String managerName;
+private String contactNumber;
+
+@Embedded
+@Column(nullable = true)
+private Address address;
+
+@OneToOne(cascade = CascadeType.ALL)
+private Item item;
+
+public Restaurant(String restaurantName, String managerName, String contactNumber, Address address) {
+	super();
+	this.restaurantName = restaurantName;
+	this.managerName = managerName;
+	this.contactNumber = contactNumber;
+	this.address = address;
+}
+
+
+
+}

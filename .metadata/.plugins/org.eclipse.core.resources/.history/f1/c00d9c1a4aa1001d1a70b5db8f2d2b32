@@ -1,0 +1,50 @@
+package com.nv.foodapp.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.nv.foodapp.dto.ItemDTO;
+import com.nv.foodapp.entity.Item;
+import com.nv.foodapp.service.item.IItemService;
+import com.nv.foodapp.util.ItemDTOConvertor;
+
+
+@RestController
+@RequestMapping("/Items")
+public class ItemRestController {
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+	ItemDTOConvertor itemConvertor;
+	
+	@Autowired
+	IItemService itemService;
+	
+	public ItemRestController() {
+		logger.info("student rest controller");
+		System.err.println("student rest controller");
+	}
+	
+	@PostMapping("/register")
+	public ResponseEntity<ItemDTO> savedItem(@RequestBody Item item)throws Exception{
+		Item savedItem = itemService.addItem(item);
+		logger.info(" --->> Instructor saved "+savedItem);
+		
+         if(savedItem!=null) {
+        	 ItemDTO dtoObj=itemConvertor.getItemDTO(savedItem);
+        	 return new ResponseEntity<StudentDTO>(dtoObj,HttpStatus.OK);
+        	 
+         }
+		
+		
+		return null;
+	}
+	
+
+}

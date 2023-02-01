@@ -1,0 +1,73 @@
+package com.nv.foodapp.service.restaurant;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.nv.foodapp.entity.Restaurant;
+import com.nv.foodapp.exception.InvalidInputDataException;
+import com.nv.foodapp.repository.item.ItemRepository;
+import com.nv.foodapp.repository.restaurant.IRestaurantRepository;
+
+@Service
+public class RestaurantServiceImpl implements IRestaurantService {
+     
+	@Autowired
+	IRestaurantRepository restaurantRepository;
+	
+	@Autowired
+	ItemRepository itemRepository;
+	
+	
+	@Override
+	public Restaurant addRestaurant(Restaurant res)throws Exception{
+		// TODO Auto-generated method stub
+		if(res!=null) {
+			if(res.getRestaurantName().equals("")) {
+				throw new InvalidInputDataException("Restaurant name","restaurant name is null");
+			}
+			Restaurant restaurantsaved=restaurantRepository.save(res);
+			return restaurantsaved;
+		}
+		
+		else throw new NullPointerException("student is null");
+	}
+
+	@Override
+	public Restaurant removeRestaurant(Restaurant res) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Restaurant updateRestaurant(Restaurant res) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Restaurant viewRestaurantByName(String name) {
+		// TODO Auto-generated method stub
+		return restaurantRepository.viewRestaurantByName(name);
+	}
+
+	@Override
+	public List<Restaurant> viewAllRestaurants() {
+		// TODO Auto-generated method stub
+		return restaurantRepository.findAll();
+	}
+
+	@Override
+	public List<Restaurant> viewNearByRestaurant(String location) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Restaurant> viewRestaurantByItemName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

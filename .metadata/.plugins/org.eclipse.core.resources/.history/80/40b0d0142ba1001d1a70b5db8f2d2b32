@@ -1,0 +1,11 @@
+package com.nv.foodapp.repository.restaurant;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.nv.foodapp.entity.Restaurant;
+
+public interface IRestaurantRepository extends JpaRepository<Restaurant,Integer>,ICustomRestaurantRepository{
+
+	public Restaurant viewRestaurantByName(String name);
+	
+}

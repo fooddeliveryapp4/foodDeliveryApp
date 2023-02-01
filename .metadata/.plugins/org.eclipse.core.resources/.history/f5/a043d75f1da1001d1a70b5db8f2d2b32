@@ -1,0 +1,5 @@
+package com.nv.foodapp.repository.item;
+
+public interface ItemRepository {
+
+}

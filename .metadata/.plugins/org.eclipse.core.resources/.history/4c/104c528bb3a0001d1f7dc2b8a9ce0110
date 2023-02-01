@@ -1,0 +1,10 @@
+package com.nv.foodapp.service.restaurant;
+
+import com.nv.foodapp.entity.Restaurant;
+
+public interface IRestaurantService {
+	public Restaurant addRestaurant(Restaurant res);
+	
+
+	
+}

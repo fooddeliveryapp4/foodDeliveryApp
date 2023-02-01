@@ -1,0 +1,10 @@
+package com.nv.foodapp.repository.restaurant;
+
+import com.nv.foodapp.entity.Item;
+import com.nv.foodapp.entity.Restaurant;
+
+public interface ICustomRestaurantRepository {
+	
+	public Restaurant updateRestaurantByItem(Restaurant restaurant,Item item);
+
+}

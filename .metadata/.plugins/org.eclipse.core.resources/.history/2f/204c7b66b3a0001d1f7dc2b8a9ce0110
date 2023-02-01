@@ -1,0 +1,10 @@
+package com.nv.foodapp.service.restaurant;
+
+import java.util.List;
+
+import com.cg.fds.entities.Restaurant;
+
+public interface IRestaurantService {
+
+	
+}

@@ -1,0 +1,22 @@
+package com.nv.foodapp.repository.item;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.nv.foodapp.entity.Item;
+
+@Repository
+public interface ItemRepository extends JpaRepository<Item,Integer>{
+   
+	//public Item getItemByItemName(String itemName);
+	//public List<Item> getItemByCategory(String category);
+	public Item addItem(Item item)throws Exception;
+	public Item viewItemById(int id)throws Exception;
+	public Item updateRestaurantBYItem(int restaurantid,int itemid)throws Exception;
+	public List<Item> viewAllItems();
+	public Item viewAllItemsByName(String name);
+	
+   	
+}

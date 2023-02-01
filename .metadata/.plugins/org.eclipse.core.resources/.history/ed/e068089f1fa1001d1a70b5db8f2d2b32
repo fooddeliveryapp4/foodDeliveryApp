@@ -1,0 +1,15 @@
+package com.nv.foodapp.exception;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class InvalidInputDataException {
+
+	String fieldName;
+	String msg;
+
+}

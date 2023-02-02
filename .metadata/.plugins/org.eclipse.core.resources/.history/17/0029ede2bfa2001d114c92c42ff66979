@@ -1,0 +1,40 @@
+package com.nv.foodapp.service.review;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.nv.foodapp.entity.Review;
+import com.nv.foodapp.repository.review.IReviewRepository;
+
+public class ReviewServiceImpl implements IReviewService {
+
+	
+	@Autowired
+	private IReviewRepository reviewRepository;
+	
+	@Override
+	public Review addReview(Review review) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteReview(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Review> listAllReviews() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Review> listAllReviewsByRestaurantId(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

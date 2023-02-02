@@ -1,0 +1,5 @@
+package com.nv.foodapp.service.bill;
+
+public class IBillService {
+
+}

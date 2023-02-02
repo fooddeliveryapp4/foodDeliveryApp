@@ -1,0 +1,9 @@
+package com.nv.foodapp.dto;
+
+public class ReviewResponseDTO {
+	
+	public String customerName;
+	public int StarRating;
+	public String message;
+
+}

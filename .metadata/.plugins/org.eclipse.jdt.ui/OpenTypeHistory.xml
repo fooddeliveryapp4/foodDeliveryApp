@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-    <typeInfo handle="=fooddeliveryapp/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.nv.foodapp.service.restaurant{IRestaurantService.java[IRestaurantService" modifiers="513" timestamp="1675164426960"/>
+    <typeInfo handle="=fooddeliveryapp/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.nv.foodapp.service.restaurant{IRestaurantService.java[IRestaurantService" modifiers="513" timestamp="1675268814214"/>
     <typeInfo handle="=fooddeliveryapp/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.nv.foodapp.service.item{IItemService.java[IItemService" modifiers="513" timestamp="1675164412079"/>
     <typeInfo handle="=fooddeliveryapp/C:\/Users\/HJAMAKAY\/Documents\/springtool\/sts-4.17.0.RELEASE\/plugins\/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\/jre\/lib\/jrt-fs.jar`java.desktop=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/17\/docs\/api\/=/&lt;javax.imageio.event(IIOWriteProgressListener.class[IIOWriteProgressListener" modifiers="1537" timestamp="1672226788885"/>
+    <typeInfo handle="=fooddeliveryapp/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.nv.foodapp.service.bill{IBillService.java[IBillService" modifiers="513" timestamp="1675270910991"/>
+    <typeInfo handle="=fooddeliveryapp/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.nv.foodapp.repository.bill{IBillRepository.java[IBillRepository" modifiers="513" timestamp="1675269646980"/>
+    <typeInfo handle="=fooddeliveryapp/C:\/Users\/HJAMAKAY\/.gradle\/caches\/modules-2\/files-2.1\/org.hibernate\/hibernate-core\/5.6.14.Final\/71e407089b71ed7c6e99385fd851c308fed7be44\/hibernate-core-5.6.14.Final.jar=/gradle_used_by_scope=/main,test=/&lt;org.hibernate.context.spi(CurrentSessionContext.class[CurrentSessionContext" modifiers="1537" timestamp="1674550419259"/>
+    <typeInfo handle="=fooddeliveryapp/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.nv.foodapp.service.review{IReviewService.java[IReviewService" modifiers="513" timestamp="1675317937524"/>
+    <typeInfo handle="=fooddeliveryapp/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.nv.foodapp.repository.review{IReviewRepository.java[IReviewRepository" modifiers="513" timestamp="1675317131189"/>
 </typeInfoHistroy>

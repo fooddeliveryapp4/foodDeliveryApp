@@ -1,0 +1,46 @@
+package com.nv.foodapp.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.nv.foodapp.dto.BillDTO;
+import com.nv.foodapp.entity.Bill;
+import com.nv.foodapp.service.bill.IBillService;
+import com.nv.foodapp.util.BillDTOConvertor;
+
+@RestController
+@RequestMapping("/bill")
+public class BillRestController {
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+	BillDTOConvertor billDTOConvertor;
+	
+	@Autowired
+	IBillService billService;
+	
+	public BillRestController() {
+		logger.info("Bill rest controller");
+		System.err.println("Bill rest controller");
+		
+	}
+	
+	@PostMapping("/register")
+	public ResponseEntity<BillDTO> saveBill(@RequestBody Bill bill)
+	{
+		Bill savedBill = billService.addBill(bill);
+		logger.info(" --->> Bill saved "+savedInstructror);
+		
+		InstructorDTODefaultResponse dtoObj = dtoConvertor.convertTo(savedInstructror);
+		
+		
+		return new ResponseEntity<InstructorDTODefaultResponse>(dtoObj,HttpStatus.OK);
+	}
+
+}

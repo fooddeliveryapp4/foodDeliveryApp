@@ -11,6 +11,7 @@ public class RestaurantDTO {
 	
 	private int restaurantId;
 	private String restaurantName;
-	private String restaurantContainItem;
+	private String restaurantContactNumber;
+	
 
 }

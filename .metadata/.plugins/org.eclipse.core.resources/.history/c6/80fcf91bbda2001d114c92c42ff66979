@@ -1,0 +1,21 @@
+package com.nv.foodapp.entity;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class Review {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	private LocalDateTime time_stamp;
+	private String message;
+	private String itemName;
+	private String customerName;
+	private int restaurantId;
+	private int starRating;
+	
+
+}

@@ -1,0 +1,52 @@
+package com.nv.foodapp.util;
+
+import org.springframework.stereotype.Component;
+
+import com.nv.foodapp.dto.RestaurantDTO;
+import com.nv.foodapp.dto.RestaurantDefualtDTO;
+import com.nv.foodapp.entity.Restaurant;
+
+@Component
+public class RestaurantDTOConvertor {
+	
+	public RestaurantDefualtDTO getDefualtDTO(Restaurant r)
+	{
+		RestaurantDefualtDTO obj= new RestaurantDefualtDTO(r.getRestaurantId(),r.getRestaurantName(),r.getContactNumber());
+		
+	    return obj;
+	}
+	
+	public RestaurantDTO getRestaurantDTO(Restaurant r) {
+		RestaurantDTO dto =new RestaurantDTO();
+		dto.setRestaurantId(r.getRestaurantId());
+		dto.setRestaurantName(r.getRestaurantName());
+		
+		if(r.getAddress()!=null && r.getAddress().getCity()!=null) {
+			dto.setRestuarantaddress(r.getAddress().getCity());
+		}
+		else dto.setRestuarantaddress("not updated");
+		
+		if(r.getAddress()!=null) {
+			String city=r.getAddress().getCity();
+			
+			
+			String contact="";
+			
+			contact += (!city.isBlank() && !city.equals(" ") )?"[ "+city : "Email Not Updated";
+		
+			
+			dto.setRestuarantaddress(contact);;
+			
+		}
+		else dto.setRestuarantaddress("not yet updated");
+	
+		dto.setRestaurantContainItem("wait for while");
+		
+		return dto;
+	}
+		
+	}
+	
+	
+
+}

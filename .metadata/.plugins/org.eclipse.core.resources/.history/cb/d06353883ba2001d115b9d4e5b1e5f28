@@ -1,0 +1,47 @@
+package com.nv.foodapp.service.bill;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.nv.foodapp.entity.Bill;
+import com.nv.foodapp.entity.Item;
+import com.nv.foodapp.exception.InvalidInputDataException;
+import com.nv.foodapp.repository.bill.IBillRepository;
+
+public class BillServiceImpl implements IBillService {
+
+	@Autowired
+	IBillRepository billRepository;
+	@Override
+	public Bill addBill(Bill bill) {
+		// TODO Auto-generated method stub
+
+		return billRepository.save(bill);
+	}
+
+	@Override
+	public Bill updateRestaurantByBill(int restaurantid, int billid){
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean removeBill(int billId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Bill viewBillById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Bill> viewAllBills() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

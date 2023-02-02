@@ -1,0 +1,49 @@
+package com.nv.foodapp.service.review;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.nv.foodapp.entity.Review;
+import com.nv.foodapp.repository.review.IReviewRepository;
+
+@Service
+public class ReviewServiceImpl implements IReviewService {
+
+	
+	@Autowired
+	private IReviewRepository reviewRepository;
+	
+	@Override
+	public Review addReview(Review review) {
+		// TODO Auto-generated method stub
+		Review review1=new Review();
+        review1.setMessage(review.getMessage());
+        review1.setCustomerName(review.getCustomerName());
+        review1.setItemName(review.getItemName());
+        review1.setRestaurantId(review.getRestaurantId());
+        review1.setStarRating(review.getStarRating());
+        review1.setTime_stamp(LocalDateTime.now());
+        return reviewRepository.save(review1);
+	}
+
+	@Override
+	public String deleteReview(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Review> listAllReviews() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Review> listAllReviewsByRestaurantId(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.nv.foodapp.service.review;
+
+import java.util.List;
+
+import com.nv.foodapp.entity.Review;
+
+public interface IReviewService {
+	
+	public Review addReview(Review review);
+	public String deleteReview(Long id);
+	public List<Review> listAllReviews();
+	List<Review> listAllReviewsByRestaurantId(Long id);
+
+}

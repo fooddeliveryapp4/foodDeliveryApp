@@ -1,0 +1,9 @@
+package com.nv.foodapp.repository.review;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.nv.foodapp.entity.Review;
+
+public interface IReviewRepository extends JpaRepository<Review,Integer>{
+
+}

@@ -1,0 +1,5 @@
+package com.nv.foodapp.repository.review;
+
+public interface IReviewRepository {
+
+}

@@ -1,0 +1,14 @@
+package com.nv.foodapp.repository.bill;
+
+import com.nv.foodapp.entity.Bill;
+import com.nv.foodapp.entity.Restaurant;
+
+public class CustomBillRepositoryImpl implements CustomBillRepository {
+
+	@Override
+	public Bill updateRestaurantById(Restaurant restaurantid, Bill billId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

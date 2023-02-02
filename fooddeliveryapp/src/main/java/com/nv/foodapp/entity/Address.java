@@ -1,8 +1,5 @@
 package com.nv.foodapp.entity;
 
-
-
-
 import javax.persistence.Embeddable;
 
 import lombok.AllArgsConstructor;
@@ -14,7 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Address {
-
 
 	private String buildingName;
 	private String area;

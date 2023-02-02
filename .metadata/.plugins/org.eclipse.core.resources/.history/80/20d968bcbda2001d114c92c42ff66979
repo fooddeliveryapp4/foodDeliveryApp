@@ -1,0 +1,11 @@
+package com.nv.foodapp.repository.review;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.nv.foodapp.entity.Review;
+
+public interface IReviewRepository extends JpaRepository<Review,Integer>{
+	@Query(value = "SELECT * from review where restaurant_id=?1", nativeQuery = true)
+	public List<Review> findAllByRestaurantId(Long id);
+
+}

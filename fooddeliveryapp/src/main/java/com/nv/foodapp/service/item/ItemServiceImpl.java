@@ -15,14 +15,12 @@ import com.nv.foodapp.exception.InvalidInputDataException;
 import com.nv.foodapp.repository.item.ItemRepository;
 import com.nv.foodapp.repository.restaurant.IRestaurantRepository;
 
-
-
 @Service
 public class ItemServiceImpl implements IItemService {
-	
+
 	@Autowired
 	ItemRepository itemrepository;
-	
+
 	@Autowired
 	IRestaurantRepository restaurantRepository;
 
@@ -30,28 +28,27 @@ public class ItemServiceImpl implements IItemService {
 	@Transactional
 	public Item addItem(Item item) throws Exception {
 		// TODO Auto-generated method stub
-		if(item!=null) {
-			if(item.getItemName().equals("")) {
-				throw new InvalidInputDataException("item name","item name is null");
+		if (item != null) {
+			if (item.getItemName().equals("")) {
+				throw new InvalidInputDataException("item name", "item name is null");
 			}
-			Item savedItem=itemrepository.save(item);
+			Item savedItem = itemrepository.save(item);
 			return savedItem;
-		}
-		else throw new NullPointerException("item is null");
-	
+		} else
+			throw new NullPointerException("item is null");
+
 	}
 
 	@Override
 	public Item viewItemById(int id) throws Exception {
 		// TODO Auto-generated method stub
-		
-		if(id >=1)
-		{
-			Item savedItem =  itemrepository.getReferenceById(id);
-			if(savedItem != null) return savedItem;
-			else 
-			{
-				throw new EntityNotFoundException("Invalid Item ID : "+id);
+
+		if (id >= 1) {
+			Item savedItem = itemrepository.getReferenceById(id);
+			if (savedItem != null)
+				return savedItem;
+			else {
+				throw new EntityNotFoundException("Invalid Item ID : " + id);
 			}
 		}
 		return null;
@@ -60,39 +57,33 @@ public class ItemServiceImpl implements IItemService {
 	@Override
 	public Item updateRestaurantBYItem(int restaurantid, int itemid) throws Exception {
 		// TODO Auto-generated method stub
-		
-       Item itemFromDB=viewItemById(itemid);
-		
-		// 2. get course 
+
+		Item itemFromDB = viewItemById(itemid);
+
 		Restaurant restaurantFromDB = restaurantRepository.getReferenceById(restaurantid);
-		
-		// if student & course both are valid and available in DB then 
-		if(itemFromDB != null & restaurantFromDB != null)
-		{
-			List<Item> allItems =restaurantFromDB.getItem();
-			
-			if(allItems != null && allItems.isEmpty() == false)
-			{
+
+		if (itemFromDB != null & restaurantFromDB != null) {
+			List<Item> allItems = restaurantFromDB.getItem();
+
+			if (allItems != null && allItems.isEmpty() == false) {
 				allItems.add(itemFromDB);
 				restaurantFromDB.setItem(allItems);
-			}
-			else // if course are null  then create ArrayList and add Student
-			{
+			} else {
 				List<Item> newItemList = new ArrayList<>();
 				newItemList.add(itemFromDB);
-				restaurantFromDB.setItem(newItemList);;
+				restaurantFromDB.setItem(newItemList);
+				;
 			}
 			// call repository save method
 			restaurantRepository.saveAndFlush(restaurantFromDB);
 			itemrepository.save(itemFromDB);
 			return itemFromDB;
+		} else {
+
+			throw new NullPointerException(
+					"Either Item " + itemFromDB + "or Restaurant " + restaurantFromDB + " is Null ");
 		}
-		else
-		{
-			// if student or course not in the db
-			throw new NullPointerException("Either Item "+itemFromDB+"or Restaurant "+restaurantFromDB+" is Null ");
-		}
-		
+
 	}
 
 	@Override
@@ -106,7 +97,5 @@ public class ItemServiceImpl implements IItemService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-     
-	
 
 }

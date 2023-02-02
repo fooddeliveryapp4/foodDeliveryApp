@@ -1,0 +1,10 @@
+package com.nv.foodapp.dto;
+
+public class BillDTO {
+
+	private int billId;
+	private int customerId;
+	private int itemCount;
+	private int grossBillAmount;
+	private int gstAmount;
+}

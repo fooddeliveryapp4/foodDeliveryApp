@@ -1,0 +1,33 @@
+package com.nv.foodapp.service.review;
+
+import java.util.List;
+
+import com.nv.foodapp.entity.Review;
+
+public class ReviewServiceImpl implements IReviewService {
+
+	@Override
+	public Review addReview(Review review) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteReview(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Review> listAllReviews() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Review> listAllReviewsByRestaurantId(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

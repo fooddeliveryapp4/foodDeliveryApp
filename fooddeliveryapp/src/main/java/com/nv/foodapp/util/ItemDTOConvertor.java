@@ -10,7 +10,7 @@ public class ItemDTOConvertor {
 	
 	public ItemDTO getItemDTO(Item i) {
 		
-		ItemDTO obj= new ItemDTO(i.getItemId(),i.getItemName(),i.getItemName());
+		ItemDTO obj= new ItemDTO(i.getItemId(),i.getItemName(),i.getCategory());
 		return obj;
 	}
 	

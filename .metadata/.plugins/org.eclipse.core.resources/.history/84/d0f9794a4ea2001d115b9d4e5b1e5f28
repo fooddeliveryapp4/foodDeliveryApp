@@ -1,0 +1,40 @@
+package com.nv.foodapp.entity;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
+import javax.persistence.OneToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Bill {
+
+	private int billId;
+	private int itemCount;
+	private int grossBillAmount;
+	private int gstAmount;
+
+	@ElementCollection
+	List<String> items;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Restaurant restaurant;
+
+	public Bill(int itemCount, int grossBillAmount, int gstAmount, List<String> items) {
+		super();
+		this.itemCount = itemCount;
+		this.grossBillAmount = grossBillAmount;
+		this.gstAmount = gstAmount;
+	}
+
+	
+	
+	
+	
+}

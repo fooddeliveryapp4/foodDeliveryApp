@@ -1,0 +1,5 @@
+package com.nv.foodapp.entity;
+
+public class Bill {
+
+}

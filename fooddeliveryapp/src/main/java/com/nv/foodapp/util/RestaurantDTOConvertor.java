@@ -3,6 +3,7 @@ package com.nv.foodapp.util;
 import org.springframework.stereotype.Component;
 
 import com.nv.foodapp.dto.RestaurantDTO;
+import com.nv.foodapp.dto.RestaurantDefualtDTO;
 import com.nv.foodapp.entity.Restaurant;
 
 @Component
@@ -14,6 +15,10 @@ public class RestaurantDTOConvertor {
 		
 	    return obj;
 	}
+	
+	
+		
+	
 	
 	
 

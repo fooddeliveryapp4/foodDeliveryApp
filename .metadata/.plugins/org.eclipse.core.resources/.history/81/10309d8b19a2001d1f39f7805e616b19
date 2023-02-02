@@ -1,0 +1,25 @@
+package com.nv.foodapp.util;
+
+import org.springframework.stereotype.Component;
+
+import com.nv.foodapp.dto.RestaurantDTO;
+import com.nv.foodapp.dto.RestaurantDefualtDTO;
+import com.nv.foodapp.entity.Restaurant;
+
+@Component
+public class RestaurantDTOConvertor {
+	
+	public RestaurantDefualtDTO getDefualtDTO(Restaurant r)
+	{
+		RestaurantDefualtDTO obj= new RestaurantDefualtDTO(r.getRestaurantId(),r.getRestaurantName(),r.getContactNumber());
+		
+	    return obj;
+	}
+	
+	public RestaurantDTO getRestaurantDTO(Restaurant r) {
+		
+	}
+	
+	
+
+}

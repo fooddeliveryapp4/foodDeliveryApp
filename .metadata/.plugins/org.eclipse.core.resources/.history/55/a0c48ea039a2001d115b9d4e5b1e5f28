@@ -1,0 +1,14 @@
+package com.nv.foodapp.service.bill;
+
+import java.util.List;
+
+import com.nv.foodapp.entity.Bill;
+import com.nv.foodapp.entity.Restaurant;
+
+public interface IBillService {
+	public Bill addBill(Bill bill)throws Exception;
+	public boolean removeBill(int billId);
+	public Bill viewBillById(int id);
+	public List<Bill> viewAllBills();
+
+}

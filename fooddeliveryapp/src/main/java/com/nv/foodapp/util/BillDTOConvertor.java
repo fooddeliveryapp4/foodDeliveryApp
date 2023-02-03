@@ -8,7 +8,7 @@ import com.nv.foodapp.entity.Bill;
 public class BillDTOConvertor {
 	
 	public BillDTO getBillDTO(Bill b) {
-		BillDTO obj= new BillDTO(b.getBillId(),b.getItemCount(),b.getGrossBillAmount(),b.getGrossBillAmount());
+		BillDTO obj= new BillDTO(b.getBillId(),b.getItemCount(),b.getGrossBillAmount(),b.getGstAmount());
 		 return obj;
 	}
 

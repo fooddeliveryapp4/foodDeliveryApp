@@ -76,9 +76,9 @@ public class RestaurantRestController {
 		return new ResponseEntity<RestaurantDTO>(dto, HttpStatus.OK);
 
 	}
-	
+
 	@DeleteMapping("/remove/{restaurantId}")
-	public ResponseEntity<Boolean> deleteRestaurant(@PathVariable int restaurantId){
+	public ResponseEntity<Boolean> deleteRestaurant(@PathVariable int restaurantId) {
 		boolean status = restaurantService.removeRestaurant(restaurantId);
 		return new ResponseEntity<Boolean>(status, HttpStatus.OK);
 	}
@@ -87,7 +87,48 @@ public class RestaurantRestController {
 	public List<Restaurant> ListAllByRestaurantId(@PathVariable("id") int id) {
 		return restaurantService.findAllByRestaurantId(id);
 	}
-	
-	
+
+	@GetMapping("/resbystate/{state}")
+
+	public ResponseEntity<List<RestaurantDTO>> getResByState(@PathVariable String state) {
+
+		List<Restaurant> allRes = restaurantService.getRestuarantByState(state);
+		List<RestaurantDTO> dtoObj = new ArrayList<>();
+		for (Restaurant res : allRes) {
+			RestaurantDTO resDTO = restuarantConvertor.getRestaurantDTO(res);
+			dtoObj.add(resDTO);
+		}
+
+		return new ResponseEntity<List<RestaurantDTO>>(dtoObj, HttpStatus.OK);
+
+	}
+	@GetMapping("/resbycity/{city}")
+
+	public ResponseEntity<List<RestaurantDTO>> getResByCity(@PathVariable String city) {
+
+		List<Restaurant> allRes = restaurantService.getRestuarantByCity(city);
+		List<RestaurantDTO> dtoObj = new ArrayList<>();
+		for (Restaurant res : allRes) {
+			RestaurantDTO resDTO = restuarantConvertor.getRestaurantDTO(res);
+			dtoObj.add(resDTO);
+		}
+
+		return new ResponseEntity<List<RestaurantDTO>>(dtoObj, HttpStatus.OK);
+
+	}
+	@GetMapping("/resbyname/{name}")
+
+	public ResponseEntity<List<RestaurantDTO>> getResByName(@PathVariable String name) {
+
+		List<Restaurant> allRes = restaurantService.getRestuarantByName(name);
+		List<RestaurantDTO> dtoObj = new ArrayList<>();
+		for (Restaurant res : allRes) {
+			RestaurantDTO resDTO = restuarantConvertor.getRestaurantDTO(res);
+			dtoObj.add(resDTO);
+		}
+
+		return new ResponseEntity<List<RestaurantDTO>>(dtoObj, HttpStatus.OK);
+
+	}
 
 }

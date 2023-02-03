@@ -76,6 +76,50 @@ public class RestaurantServiceImpl implements IRestaurantService {
 		return list;
 	}
 
+	@Override
+	public List<Restaurant> getRestuarantByState(String state) {
+		// TODO Auto-generated method stub
+		List<Restaurant> allRes = restaurantRepository.findAll();
+		List<Restaurant> allResByState = new ArrayList<>();
+		for (Restaurant res: allRes) {
+			String resState = res.getAddress().getState();
+			if(resState.equals(state)) {
+				allResByState.add(res);
+			}
+		}
+		return allResByState;
+	}
+
+	@Override
+	public List<Restaurant> getRestuarantByCity(String city) {
+		// TODO Auto-generated method stub
+		List<Restaurant> allRes = restaurantRepository.findAll();
+		List<Restaurant> allResByCity = new ArrayList<>();
+		for (Restaurant res: allRes) {
+			String resCity = res.getAddress().getCity();
+			if(resCity.equals(city)) {
+				allResByCity.add(res);
+			}
+		}
+		return allResByCity;
+		
+	}
+
+	@Override
+	public List<Restaurant> getRestuarantByName(String name) {
+		// TODO Auto-generated method stub
+		List<Restaurant> allRes = restaurantRepository.findAll();
+		List<Restaurant> allResByName = new ArrayList<>();
+		for (Restaurant res: allRes) {
+			String resName = res.getRestaurantName();
+			if(resName.equals(name)) {
+				allResByName.add(res);
+			}
+		}
+		return allResByName;
+	}
+
+
 	
 
 	

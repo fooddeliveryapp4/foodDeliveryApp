@@ -16,6 +16,7 @@ public interface IRestaurantRepository extends JpaRepository<Restaurant,Integer>
 
 	@Query(value = "SELECT * from restaurant where restaurant_id=?1", nativeQuery = true)
 	public List<Restaurant> findAllByRestaurantId(int id);
+	
 
 
 	

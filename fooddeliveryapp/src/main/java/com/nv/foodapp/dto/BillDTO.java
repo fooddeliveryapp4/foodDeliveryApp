@@ -15,7 +15,7 @@ public class BillDTO {
 
 	private int billId;
 	private int itemCount;
-	private int grossBillAmount;
+	private int totalAmount;
 	private int gstAmount;
 	
 }   

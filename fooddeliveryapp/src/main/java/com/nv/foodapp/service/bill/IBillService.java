@@ -13,5 +13,6 @@ public interface IBillService {
 	public boolean removeBill(int billId);
 	public Bill viewBillById(int id)throws Exception;
 	public List<Bill> viewAllBills();
+	
 
 }

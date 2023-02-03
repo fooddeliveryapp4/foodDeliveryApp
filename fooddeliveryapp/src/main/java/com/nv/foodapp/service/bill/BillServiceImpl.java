@@ -20,11 +20,16 @@ public class BillServiceImpl implements IBillService {
 
 	@Autowired
 	IBillRepository billRepository;
+	
+	@Autowired
+	IRestaurantRepository restaurantRepository;
 
 	@Override
 	public Bill addBill(Bill bill)throws Exception {
 		// TODO Auto-generated method stub
 		if (bill != null) {
+			bill.setGstAmount((int)(bill.getGrossBillAmount()*0.10));
+			bill.setGrossBillAmount(bill.getGstAmount()+bill.getGrossBillAmount());
 			Bill savedBill = billRepository.save(bill);
 			return savedBill;
 		} else

@@ -12,6 +12,9 @@ public interface IRestaurantService {
 	public Restaurant viewRestaurantById(int id);
 	public List<Restaurant> viewAllRestaurants();
 	public List<Restaurant> findAllByRestaurantId(int id);
+	public List<Restaurant> getRestuarantByState(String state);
+	public List<Restaurant> getRestuarantByCity(String city);
+	public List<Restaurant> getRestuarantByName(String name);
 	
 	
 }

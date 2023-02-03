@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.nv.foodapp.entity.Bill;
 @Repository
-public interface IBillRepository extends JpaRepository<Bill,Integer>{
+public interface IBillRepository extends JpaRepository<Bill,Integer>,CustomBillRepository{
 
 }

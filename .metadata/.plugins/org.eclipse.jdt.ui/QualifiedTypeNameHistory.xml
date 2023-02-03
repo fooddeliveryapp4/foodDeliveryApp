@@ -8,7 +8,6 @@
     <fullyQualifiedTypeName name="com.nv.foodapp.repository.item.ICustomItemRepository"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
     <fullyQualifiedTypeName name="com.nv.foodapp.dto.RestaurantDefualtDTO"/>
-    <fullyQualifiedTypeName name="com.nv.foodapp.dto.RestaurantDTO"/>
     <fullyQualifiedTypeName name="javax.persistence.ElementCollection"/>
     <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
     <fullyQualifiedTypeName name="com.nv.foodapp.entity.Item"/>
@@ -18,13 +17,9 @@
     <fullyQualifiedTypeName name="com.nv.foodapp.service.bill.IBillService"/>
     <fullyQualifiedTypeName name="com.nv.foodapp.controller.BillRestController"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="com.nv.foodapp.repository.bill.IBillRepository"/>
     <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
@@ -52,12 +47,17 @@
     <fullyQualifiedTypeName name="com.nv.foodapp.service.review.ReviewServiceImpl"/>
     <fullyQualifiedTypeName name="com.nv.foodapp.controller.ReviewRestController"/>
     <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
-    <fullyQualifiedTypeName name="com.nv.foodapp.entity.Restaurant"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.nv.foodapp.entity.Review"/>
     <fullyQualifiedTypeName name="java.lang.Long"/>
     <fullyQualifiedTypeName name="com.nv.foodapp.util.ReviewDTOConvertor"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.nv.foodapp.dto.ReviewResponseDTO"/>
+    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="com.nv.foodapp.entity.Restaurant"/>
+    <fullyQualifiedTypeName name="com.nv.foodapp.dto.RestaurantDTO"/>
 </qualifiedTypeNameHistroy>

@@ -1,6 +1,7 @@
 package com.nv.foodapp.entity;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,8 +24,6 @@ public class Bill {
 	private int grossBillAmount;
 	private int gstAmount;
 
-	//@OneToOne(cascade = CascadeType.ALL)
-	//private Restaurant restaurant;
 
 	public Bill(int itemCount, int grossBillAmount, int gstAmount) {
 		super();

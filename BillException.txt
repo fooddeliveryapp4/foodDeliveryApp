@@ -1,0 +1,13 @@
+package com.nv.foodapp.exception;
+
+public class BillException extends Exception{
+	
+	
+	public BillException() {
+		
+	}
+
+    public BillException(String message) {
+        super(message);
+    }
+}

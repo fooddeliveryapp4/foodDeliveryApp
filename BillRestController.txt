@@ -1,0 +1,101 @@
+package com.nv.foodapp.controller;
+
+import java.util.ArrayList;
+
+import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.nv.foodapp.dto.BillRequestResponseDTO;
+import com.nv.foodapp.dto.ItemDTO;
+import com.nv.foodapp.entity.Bill;
+import com.nv.foodapp.entity.Item;
+import com.nv.foodapp.service.bill.IBillService;
+import com.nv.foodapp.util.BillDTOConvertor;
+
+@RestController
+@RequestMapping("/bill")
+public class BillRestController {
+
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	@Autowired
+	IBillService ibillService;
+
+	@Autowired
+	BillDTOConvertor dtoConvertor;
+
+	public BillRestController() {
+		logger.info("Bill rest Controller");
+		System.err.println("Bill rest Controller");
+	}
+
+	@PostMapping("/register")
+	public ResponseEntity<BillRequestResponseDTO> saveBill(@RequestBody Bill bill) throws Exception {
+		Bill savedBill = ibillService.addBill(bill);
+		logger.info(" --->> Bill saved " + savedBill);
+
+		if (savedBill != null) {
+			BillRequestResponseDTO dtoObj = dtoConvertor.getBillRequestResponseDTO(savedBill);
+			return new ResponseEntity<BillRequestResponseDTO>(dtoObj, HttpStatus.OK);
+
+		}
+		return null;
+	}
+
+	@GetMapping("/list")
+	public ResponseEntity<List<BillRequestResponseDTO>> getAllBills() {
+		List<Bill> allbillsInDB = ibillService.viewAllBills();
+
+		List<BillRequestResponseDTO> dtoList = new ArrayList<>();
+		for (Bill bill : allbillsInDB) {
+
+			BillRequestResponseDTO dtoObj = dtoConvertor.getBillRequestResponseDTO(bill);
+			dtoList.add(dtoObj);
+		}
+
+		return new ResponseEntity<List<BillRequestResponseDTO>>(dtoList, HttpStatus.OK);
+	}
+
+	@GetMapping("/{billid}")
+	public ResponseEntity<BillRequestResponseDTO> getBillById(@PathVariable int billid) throws Exception {
+
+		Bill savedBill = ibillService.viewBillById(billid);
+		BillRequestResponseDTO dto = dtoConvertor.getBillRequestResponseDTO(savedBill);
+		return new ResponseEntity<BillRequestResponseDTO>(dto, HttpStatus.OK);
+
+	}
+
+	@DeleteMapping("/remove/{billId}")
+	public ResponseEntity<Boolean> deleteBill(@PathVariable int billId) {
+
+		boolean status = ibillService.removeBill(billId);
+
+		return new ResponseEntity<Boolean>(status, HttpStatus.OK);
+
+	}
+	
+	@PutMapping("/{bid}/Restaurant/{rid}")
+	public String updateRestaurantWithBill(@PathVariable int bid,@PathVariable int rid)
+	{
+		Bill updatedBill = ibillService.updateRestaurant(bid, rid);
+
+		if(updatedBill.getRestaurant() != null)
+		{
+			return updatedBill.toString();
+		}
+		else return "error : - "+updatedBill.toString()+" ";
+	}
+		
+}
+

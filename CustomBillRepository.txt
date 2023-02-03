@@ -1,0 +1,10 @@
+package com.nv.foodapp.repository;
+
+import com.nv.foodapp.entity.Bill;
+import com.nv.foodapp.entity.Restaurant;
+
+public interface CustomBillRepository {
+
+	 public Bill updateRestaurantByBill(Bill bill, Restaurant savedRestaurant);
+	
+}

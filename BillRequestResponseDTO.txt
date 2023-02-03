@@ -1,0 +1,22 @@
+package com.nv.foodapp.dto;
+
+import java.time.LocalDateTime;
+import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
+public class BillRequestResponseDTO {
+
+	
+	private int billId;
+	private String restName;
+	private int itemCount;
+	private int grossBillAmount;
+	private int gstAmount;
+	
+	
+}

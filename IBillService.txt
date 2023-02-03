@@ -1,0 +1,31 @@
+package com.nv.foodapp.service.bill;
+
+import com.nv.foodapp.exception.BillException;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.nv.foodapp.entity.Bill;
+import com.nv.foodapp.entity.Restaurant;
+
+
+@Service
+public interface IBillService {
+	
+	public Bill addBill(Bill bill) throws BillException;
+	
+	public Bill viewBillById(int billid)throws BillException;
+
+	public List<Bill> viewAllBills();
+
+	public boolean removeBill(int billId);
+  
+	public Bill updateRestaurant(int billId,int RestaurantId);
+	
+	
+
+	public List<Bill> findAllByBillId(int id);
+}
+
+

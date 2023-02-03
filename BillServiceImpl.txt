@@ -1,0 +1,44 @@
+package com.nv.foodapp.service.bill;
+
+import java.util.ArrayList;
+
+import java.util.List;
+import javax.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.nv.foodapp.entity.Bill;
+import com.nv.foodapp.entity.Item;
+import com.nv.foodapp.entity.Restaurant;
+import com.nv.foodapp.exception.BillException;
+import com.nv.foodapp.exception.InvalidInputDataException;
+import com.nv.foodapp.repository.IBillRepository;
+import com.nv.foodapp.repository.item.ItemRepository;
+import com.nv.foodapp.repository.restaurant.IRestaurantRepository;
+import com.nv.foodapp.service.bill.IBillService;
+
+
+
+@Service
+public class BillServiceImpl implements IBillService {
+	
+	@Autowired
+	IBillRepository ibillRepository;
+	
+	@Autowired
+	IRestaurantRepository irestaurantRepository;
+
+	@Override
+	public Bill addBill(Bill bill) throws BillException {
+		// TODO Auto-generated method stub
+		if(bill!=null) {
+			bill.setGstAmount((int)(bill.getGrossBillAmount()*0.10));
+			bill.setGrossBillAmount(bill.getGstAmount()+bill.getGrossBillAmount());
+			Bill savedBill = ibillRepository.save(bill);
+			return savedBill;
+		}
+		else 
+			throw new NullPointerException("restaurant is null");
+		
+		}
+		

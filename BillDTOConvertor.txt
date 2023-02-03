@@ -1,0 +1,24 @@
+package com.nv.foodapp.util;
+import org.springframework.stereotype.Component;
+import com.nv.foodapp.dto.BillRequestResponseDTO;
+import com.nv.foodapp.dto.ItemDTO;
+import com.nv.foodapp.dto.RestaurantDTO;
+import com.nv.foodapp.entity.Bill;
+import com.nv.foodapp.entity.Item;
+
+
+@Component
+public class BillDTOConvertor {
+
+
+	public BillRequestResponseDTO getBillRequestResponseDTO(Bill b) {
+		
+		BillRequestResponseDTO obj= new BillRequestResponseDTO(b.getBillId(),b.getItemCount(),b.getGrossBillAmount(),b.getGstAmount());
+		return obj;
+	}
+	}
+
+
+	
+
+
